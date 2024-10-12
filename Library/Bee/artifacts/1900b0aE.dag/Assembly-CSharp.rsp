@@ -374,6 +374,13 @@
 "Assets/Scripts/Trigger.cs"
 "Assets/Scripts/TriggerMovingTime.cs"
 "Assets/Scripts/TriggerOpen.cs"
+"Assets/Scripts/Triggers/Trigger.cs"
+"Assets/Scripts/Triggers/TriggerAddQuest.cs"
+"Assets/Scripts/Triggers/TriggerChangeQuest.cs"
+"Assets/Scripts/Triggers/TriggerCheckItems.cs"
+"Assets/Scripts/Triggers/TriggerDelQuest.cs"
+"Assets/Scripts/Triggers/TriggerMovingTime.cs"
+"Assets/Scripts/Triggers/TriggerOpen.cs"
 "Assets/Starfield Skybox/Demo/Script/LookCamera.cs"
 -langversion:9.0
 /deterministic
