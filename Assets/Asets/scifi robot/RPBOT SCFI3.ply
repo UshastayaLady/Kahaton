@@ -1,0 +1,18 @@
+ply
+format ascii 1.0
+comment Created by Blender 2.79 (sub 0) - www.blender.org, source file: 'RPBOT SCFI3.blend'
+element vertex 4
+property float x
+property float y
+property float z
+property float nx
+property float ny
+property float nz
+element face 1
+property list uchar uint vertex_indices
+end_header
+8.309878 17.566301 -0.386264 0.089690 -0.812288 -0.576320
+8.909687 12.134058 7.363496 0.089690 -0.812288 -0.576320
+-0.516056 11.093302 7.363496 0.089690 -0.812288 -0.576320
+-1.115865 16.525545 -0.386264 0.089690 -0.812288 -0.576320
+4 0 1 2 3
