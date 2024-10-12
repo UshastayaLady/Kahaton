@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Mari\\Progect\\2\\Kahaton\\",
+  "WorkspaceRootPath": "C:\\Users\\kaf41-51\\Desktop\\UnityMe\\Kahaton\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{215213FA-A1E9-9F7F-CC9D-6B8A807105FE}|Assembly-CSharp.csproj|c:\\users\\mari\\progect\\2\\kahaton\\assets\\scripts\\firstpersoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{215213FA-A1E9-9F7F-CC9D-6B8A807105FE}|Assembly-CSharp.csproj|c:\\users\\kaf41-51\\desktop\\unityme\\kahaton\\assets\\scripts\\firstpersoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{215213FA-A1E9-9F7F-CC9D-6B8A807105FE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\firstpersoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "FirstPersonController.cs",
-              "DocumentMoniker": "C:\\Users\\Mari\\Progect\\2\\Kahaton\\Assets\\Scripts\\FirstPersonController.cs",
+              "DocumentMoniker": "C:\\Users\\kaf41-51\\Desktop\\UnityMe\\Kahaton\\Assets\\Scripts\\FirstPersonController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FirstPersonController.cs",
-              "ToolTip": "C:\\Users\\Mari\\Progect\\2\\Kahaton\\Assets\\Scripts\\FirstPersonController.cs",
+              "ToolTip": "C:\\Users\\kaf41-51\\Desktop\\UnityMe\\Kahaton\\Assets\\Scripts\\FirstPersonController.cs",
               "RelativeToolTip": "Assets\\Scripts\\FirstPersonController.cs",
-              "ViewState": "AQIAALEAAAAAAAAAAAAwwMcAAACaAAAA",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAgwLYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T21:22:07.245Z",
               "EditorCaption": ""

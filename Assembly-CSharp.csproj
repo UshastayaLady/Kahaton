@@ -75,13 +75,20 @@
     <Compile Include="Assets\PBS Materials Variety Pack\zzz\MaterialRandomizerScript.cs" />
     <Compile Include="Assets\Scripts\QuestBar\Task.cs" />
     <Compile Include="Assets\Scripts\Cod.cs" />
+    <Compile Include="Assets\Scripts\Triggers\TriggerDelQuest.cs" />
     <Compile Include="Assets\Scripts\QuestBar\TaskBoard.cs" />
     <Compile Include="Assets\Cool Visual Effects - Part 1\Scripts\ConstantRotation.cs" />
+    <Compile Include="Assets\Scripts\Triggers\TriggerChangeQuest.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\TriggerMovingTime.cs" />
+    <Compile Include="Assets\Scripts\Triggers\TriggerOpen.cs" />
+    <Compile Include="Assets\Scripts\Triggers\TriggerMovingTime.cs" />
+    <Compile Include="Assets\Scripts\Triggers\Trigger.cs" />
+    <Compile Include="Assets\Scripts\Triggers\TriggerCheckItems.cs" />
     <Compile Include="Assets\Scripts\MovingTime.cs" />
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Scripts\Dialog\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\Triggers\TriggerAddQuest.cs" />
     <Compile Include="Assets\ScifiOfficeLite\Scripts\DemoFirstPersonController.cs" />
   </ItemGroup>
   <ItemGroup>
