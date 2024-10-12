@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C7FF50F1-9BD7-8FAF-2C80-7E86DDA775CE}</ProjectGuid>
+    <ProjectGuid>{215213FA-A1E9-9F7F-CC9D-6B8A807105FE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,19 +62,28 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\QuestBar\TaskBoardManager.cs" />
     <Compile Include="Assets\Scripts\Dialog\DialogueTrigger.cs" />
+    <Compile Include="Assets\ScifiOfficeLite\Scripts\DemoDoor.cs" />
+    <Compile Include="Assets\PBS Materials Variety Pack\zzz\MaterialRandomizer.cs" />
+    <Compile Include="Assets\Starfield Skybox\Demo\Script\LookCamera.cs" />
     <Compile Include="Assets\Scripts\Dialog\Dialogue.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\Dialog\InstantiateDialogue.cs" />
+    <Compile Include="Assets\Cool Visual Effects - Part 1\Scripts\EffectManager.cs" />
+    <Compile Include="Assets\PBS Materials Variety Pack\zzz\MaterialRandomizerScript.cs" />
     <Compile Include="Assets\Scripts\QuestBar\Task.cs" />
     <Compile Include="Assets\Scripts\QuestBar\TaskBoard.cs" />
+    <Compile Include="Assets\Cool Visual Effects - Part 1\Scripts\ConstantRotation.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\TriggerMovingTime.cs" />
     <Compile Include="Assets\Scripts\MovingTime.cs" />
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Scripts\Dialog\DialogueManager.cs" />
+    <Compile Include="Assets\ScifiOfficeLite\Scripts\DemoFirstPersonController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\XML\KPP 0.xml" />
+    <None Include="Assets\PBS Materials Variety Pack\readme.txt" />
+    <None Include="Assets\Hovl Studio\Magic effects pack\Demo scene\Readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
