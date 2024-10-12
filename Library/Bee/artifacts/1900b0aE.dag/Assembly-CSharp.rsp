@@ -358,6 +358,8 @@
 "Assets/PBS Materials Variety Pack/zzz/MaterialRandomizerScript.cs"
 "Assets/ScifiOfficeLite/Scripts/DemoDoor.cs"
 "Assets/ScifiOfficeLite/Scripts/DemoFirstPersonController.cs"
+"Assets/Scripts/Cod.cs"
+"Assets/Scripts/CursorManager.cs"
 "Assets/Scripts/Dialog/Dialogue.cs"
 "Assets/Scripts/Dialog/DialogueManager.cs"
 "Assets/Scripts/Dialog/DialogueTrigger.cs"
@@ -369,7 +371,9 @@
 "Assets/Scripts/QuestBar/Task.cs"
 "Assets/Scripts/QuestBar/TaskBoard.cs"
 "Assets/Scripts/QuestBar/TaskBoardManager.cs"
+"Assets/Scripts/Trigger.cs"
 "Assets/Scripts/TriggerMovingTime.cs"
+"Assets/Scripts/TriggerOpen.cs"
 "Assets/Starfield Skybox/Demo/Script/LookCamera.cs"
 -langversion:9.0
 /deterministic

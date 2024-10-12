@@ -60,17 +60,21 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.49f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CursorManager.cs" />
+    <Compile Include="Assets\Scripts\TriggerOpen.cs" />
     <Compile Include="Assets\Scripts\QuestBar\TaskBoardManager.cs" />
     <Compile Include="Assets\Scripts\Dialog\DialogueTrigger.cs" />
     <Compile Include="Assets\ScifiOfficeLite\Scripts\DemoDoor.cs" />
     <Compile Include="Assets\PBS Materials Variety Pack\zzz\MaterialRandomizer.cs" />
     <Compile Include="Assets\Starfield Skybox\Demo\Script\LookCamera.cs" />
     <Compile Include="Assets\Scripts\Dialog\Dialogue.cs" />
+    <Compile Include="Assets\Scripts\Trigger.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\Dialog\InstantiateDialogue.cs" />
     <Compile Include="Assets\Cool Visual Effects - Part 1\Scripts\EffectManager.cs" />
     <Compile Include="Assets\PBS Materials Variety Pack\zzz\MaterialRandomizerScript.cs" />
     <Compile Include="Assets\Scripts\QuestBar\Task.cs" />
+    <Compile Include="Assets\Scripts\Cod.cs" />
     <Compile Include="Assets\Scripts\QuestBar\TaskBoard.cs" />
     <Compile Include="Assets\Cool Visual Effects - Part 1\Scripts\ConstantRotation.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryItem.cs" />

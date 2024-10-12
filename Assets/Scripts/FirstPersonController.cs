@@ -41,36 +41,7 @@ public class FirstPersonController : MonoBehaviour
     public float maxVelocityChange = 10f;
 
     // Internal Variables
-    private bool isWalking = false;
-              
-    #region Crouch
-
-    public bool enableCrouch = true;
-    public bool holdToCrouch = true;
-    public KeyCode crouchKey = KeyCode.LeftControl;
-    public float crouchHeight = .75f;
-    public float speedReductionCrouch = .5f;
-
-    // Internal Variables
-    private bool isCrouched = false;
-    private Vector3 originalScale;
-
-    #endregion
-
-    #region Lie
-
-    public bool enableLie = true;
-    public bool holdToLie = true;
-    public KeyCode lieKey = KeyCode.F;
-    public float lieHeight = .75f;
-    public float speedReductionLie = .4f;
-
-    // Internal Variables
-    private bool isLie = false;
-
-    #endregion
-    
-
+    private bool isWalking = false;    
     #endregion
 
     #region Head Bob
@@ -92,11 +63,8 @@ public class FirstPersonController : MonoBehaviour
 
         // Set internal variables
         playerCamera.fieldOfView = fov;
-        originalScale = transform.localScale;
         jointOriginalPos = joint.localPosition;                
     }     
-
-    float camRotation;
 
     private void Update()
     {
@@ -104,11 +72,10 @@ public class FirstPersonController : MonoBehaviour
         GameObject man;
         man = GameObject.FindGameObjectWithTag("Player");
         #region Camera
-
         // Control camera movement
         if (cameraCanMove)
         {
-            yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
+            yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
 
             if (!invertCamera)
             {
@@ -116,7 +83,6 @@ public class FirstPersonController : MonoBehaviour
             }
             else
             {
-                // Inverted Y
                 pitch += mouseSensitivity * Input.GetAxis("Mouse Y");
             }
 
@@ -126,58 +92,9 @@ public class FirstPersonController : MonoBehaviour
             transform.localEulerAngles = new Vector3(0, yaw, 0);
             playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
         }
-            
-        #endregion                                
+        #endregion                             
 
-        #region Crouch
-
-        if (enableCrouch)
-        {
-            if(Input.GetKeyDown(crouchKey) && !holdToCrouch)
-            {
-                Crouch();
-            }
-            
-            if(Input.GetKeyDown(crouchKey) && holdToCrouch)
-            {
-                isCrouched = false;
-                Crouch();
-            }
-            else if(Input.GetKeyUp(crouchKey) && holdToCrouch)
-            {
-                isCrouched = true;
-                Crouch();
-            }
-        }
-
-        #endregion
-
-        #region Lia
-
-        if (enableLie)
-        {
-            if (Input.GetKeyDown(lieKey) && !holdToLie)
-            {
-                Lie();
-            }
-
-            if (Input.GetKeyDown(lieKey) && holdToLie)
-            {
-                isLie = false;
-                Lie();
-            }
-            else if (Input.GetKeyUp(lieKey) && holdToLie)
-            {
-                isLie = true;
-                Lie();
-            }
-        }
-
-        #endregion
-
-        CheckGround();
-
-        if(enableHeadBob)
+        if (enableHeadBob)
         {
             HeadBob();
         }        
@@ -224,87 +141,12 @@ public class FirstPersonController : MonoBehaviour
         #endregion
        
     }
-
-    // Sets isGrounded based on a raycast sent straigth down from the player object
-    private void CheckGround()
-    {
-        Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
-        Vector3 direction = transform.TransformDirection(Vector3.down);
-       
-    }
     
-    private void Crouch()
-    {
-        if (isFreezed) return;
-        // Stands player up to full height
-        // Brings walkSpeed back up to original speed
-        if (isCrouched)
-        {
-            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
-            walkSpeed /= speedReductionCrouch;
-
-            isCrouched = false;
-
-            gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x, 0.75f, gameObject.transform.localScale.z);
-        }
-        // Crouches player down to set height
-        // Reduces walkSpeed
-        else
-        {
-            transform.localScale = new Vector3(originalScale.x, crouchHeight, originalScale.z);
-            walkSpeed *= speedReductionCrouch;
-
-            isCrouched = true;
-            gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x, 0.5f, gameObject.transform.localScale.z);
-        }
-        
-    }
-
-    private void Lie()
-    {
-        if (isFreezed) return;
-        // Stands player up to full height
-        // Brings walkSpeed back up to original speed
-        if (isLie)
-        {
-            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
-            walkSpeed /= speedReductionLie;
-
-            isLie = false;
-
-            gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x, 0.75f, gameObject.transform.localScale.z);
-        }
-        // Crouches player down to set height
-        // Reduces walkSpeed
-        else
-        {
-            transform.localScale = new Vector3(originalScale.x, crouchHeight, originalScale.z);
-            walkSpeed *= speedReductionLie;
-
-            isLie = true;
-            gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x, 0.3f, gameObject.transform.localScale.z);
-        }
-
-    }
-
     private void HeadBob()
     {
         if(isWalking)
-        {          
-            // Calculates HeadBob speed during crouched movement
-            if (isCrouched)
-            {
-                timer += Time.deltaTime * (bobSpeed * speedReductionCrouch);
-            }
-            else if (isLie)
-            {
-                timer += Time.deltaTime * (bobSpeed * speedReductionLie);
-            }
-            // Calculates HeadBob speed during walking
-            else
-            {
-                timer += Time.deltaTime * bobSpeed;
-            }
+        {
+            timer += Time.deltaTime * bobSpeed;            
             // Applies HeadBob movement
             joint.localPosition = new Vector3(jointOriginalPos.x + Mathf.Sin(timer) * bobAmount.x, jointOriginalPos.y + Mathf.Sin(timer) * bobAmount.y, jointOriginalPos.z + Mathf.Sin(timer) * bobAmount.z);
         }
@@ -355,7 +197,7 @@ public class FirstPersonController : MonoBehaviour
         EditorGUILayout.Space();
 
         fpc.playerCamera = (Camera)EditorGUILayout.ObjectField(new GUIContent("Camera", "Camera attached to the controller."), fpc.playerCamera, typeof(Camera), true);
-        fpc.fov = EditorGUILayout.Slider(new GUIContent("Field of View", "The camera’s view angle. Changes the player camera directly."), fpc.fov, 179f, 179f);
+        fpc.fov = EditorGUILayout.Slider(new GUIContent("Field of View", "The camera’s view angle. Changes the player camera directly."), fpc.fov, 60f, 60f);
         fpc.cameraCanMove = EditorGUILayout.ToggleLeft(new GUIContent("Enable Camera Rotation", "Determines if the camera is allowed to move."), fpc.cameraCanMove);
 
         GUI.enabled = fpc.cameraCanMove;
@@ -380,38 +222,7 @@ public class FirstPersonController : MonoBehaviour
         fpc.walkSpeed = EditorGUILayout.Slider(new GUIContent("Walk Speed", "Determines how fast the player will move while walking."), fpc.walkSpeed, .1f, 10f);
         GUI.enabled = true;
 
-        EditorGUILayout.Space();              
-
-        #region Crouch
-
-        GUILayout.Label("Crouch", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleLeft, fontStyle = FontStyle.Bold, fontSize = 13 }, GUILayout.ExpandWidth(true));
-
-        fpc.enableCrouch = EditorGUILayout.ToggleLeft(new GUIContent("Enable Crouch", "Determines if the player is allowed to crouch."), fpc.enableCrouch);
-
-        GUI.enabled = fpc.enableCrouch;
-        fpc.holdToCrouch = EditorGUILayout.ToggleLeft(new GUIContent("Hold To Crouch", "Requires the player to hold the crouch key instead if pressing to crouch and uncrouch."), fpc.holdToCrouch);
-        fpc.crouchKey = (KeyCode)EditorGUILayout.EnumPopup(new GUIContent("Crouch Key", "Determines what key is used to crouch."), fpc.crouchKey);
-        fpc.crouchHeight = EditorGUILayout.Slider(new GUIContent("Crouch Height", "Determines the y scale of the player object when crouched."), fpc.crouchHeight, .1f, 1);
-        fpc.speedReductionCrouch = EditorGUILayout.Slider(new GUIContent("Speed Reduction", "Determines the percent 'Walk Speed' is reduced by. 1 being no reduction, and .5 being half."), fpc.speedReductionCrouch, .1f, 1);
-        GUI.enabled = true;
-
-        #endregion
-
-        #region Lie
-
-        GUILayout.Label("Lie", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleLeft, fontStyle = FontStyle.Bold, fontSize = 13 }, GUILayout.ExpandWidth(true));
-
-        fpc.enableLie = EditorGUILayout.ToggleLeft(new GUIContent("Enable Lie", "Determines if the player is allowed to lie."), fpc.enableLie);
-
-        GUI.enabled = fpc.enableLie;
-        fpc.holdToLie = EditorGUILayout.ToggleLeft(new GUIContent("Hold To Lie", "Requires the player to hold the lie key instead if pressing to lie and stad up."), fpc.holdToLie);
-        fpc.lieKey = (KeyCode)EditorGUILayout.EnumPopup(new GUIContent("Lie Key", "Determines what key is used to lie."), fpc.lieKey);
-        fpc.lieHeight = EditorGUILayout.Slider(new GUIContent("Lie Height", "Determines the y scale of the player object when it is in the prone position."), fpc.lieHeight, .1f, 1);
-        fpc.speedReductionLie = EditorGUILayout.Slider(new GUIContent("Speed Reduction", "Determines the percent 'Walk Speed' is reduced by. 1 being no reduction, and .5 being half."), fpc.speedReductionLie, .1f, 1);
-        GUI.enabled = true;
-
-        #endregion
-
+        EditorGUILayout.Space();    
         #endregion
 
         #region Head Bob
