@@ -7,9 +7,9 @@ public class InstantiateDialogue : MonoBehaviour
 {
     #region variables
     public static InstantiateDialogue instance = null;
-    [HideInInspector] public Dialogue dialogue;    
+    public Dialogue dialogue;    
     public TaskBoardManager questsManager;
-    [HideInInspector] public InventoryManager itemsManager;
+    public InventoryManager itemsManager;
 
     [SerializeField] private GameObject Window;
         
@@ -150,10 +150,9 @@ public class InstantiateDialogue : MonoBehaviour
         }
     }
     #endregion
-   
+
     private void WorkWithQuests(int numberOfButton)
     {
-
         for (int questNumber = 0; questNumber < dialogue.nodes[currentNode].answers[numberOfButton].quests.Length; questNumber++)
         {
             // Создание квеста
@@ -164,10 +163,10 @@ public class InstantiateDialogue : MonoBehaviour
             }
             // Если цель квеста поговорить с НПС и на этом квест закончен
             if (dialogue.nodes[currentNode].answers[numberOfButton].quests[questNumber].questEndAndDelete != null)
-            {                
+            {
                 if (questsManager.FindTaskFromBoard(dialogue.nodes[currentNode].answers[numberOfButton].quests[questNumber].questEndAndDelete))
                     questsManager.TaskEndAndDelete(dialogue.nodes[currentNode].answers[numberOfButton].quests[questNumber].questEndAndDelete);
-                
+
             }
             // Если необходимо сдать выполненный квест НПС со статусом "Выполнено"
             if (dialogue.nodes[currentNode].answers[numberOfButton].quests[questNumber].questDone != null)
@@ -175,7 +174,7 @@ public class InstantiateDialogue : MonoBehaviour
                 if (questsManager.FindTaskFromBoard(dialogue.nodes[currentNode].answers[numberOfButton].quests[questNumber].questDone))
                     if (questsManager.FindStatusTaskFromBoard(dialogue.nodes[currentNode].answers[numberOfButton].quests[questNumber].questDone, "Выполнен"))
                     {
-                        questsManager.TaskEndAndDelete(dialogue.nodes[currentNode].answers[numberOfButton].quests[questNumber].questDone);                        
+                        questsManager.TaskEndAndDelete(dialogue.nodes[currentNode].answers[numberOfButton].quests[questNumber].questDone);
                     }
                     else
                     {
@@ -212,7 +211,7 @@ public class InstantiateDialogue : MonoBehaviour
             {
                 items.Add(dialogue.nodes[currentNode].answers[numberOfButton].quests[questNumber].items[itemNumber].gameObjectTake,
                dialogue.nodes[currentNode].answers[numberOfButton].quests[questNumber].items[itemNumber].gameObjectTakeCount);
-            }            
+            }
         }
         if (itemsManager.FindItems(items))
         {
@@ -230,14 +229,14 @@ public class InstantiateDialogue : MonoBehaviour
 
     private IEnumerator waitFor(float time)
     {
-        yield return new WaitForSeconds(time);     
-    }  
+        yield return new WaitForSeconds(time);
+    }
 
     public void CloseDialogue()
     {
 
         if (dialogue != null)
-        {            
+        {
             dialogue = null;
         }
         deleteDialogue();
@@ -249,10 +248,9 @@ public class InstantiateDialogue : MonoBehaviour
     {
         secondButton.enabled = false;
         thirdButton.enabled = false;
-        nodeText.text = ""; 
+        nodeText.text = "";
         firstAnswer.text = "";
         secondAnswer.text = "";
         thirdAnswer.text = "";
-    }    
-
+    }
 }

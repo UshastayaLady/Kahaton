@@ -1,0 +1,20 @@
+<dialogue>
+<node>
+	<npctext> *Грузовой лифт не работает* </npctext>
+	<answers>
+		<answer tonode = "1">
+			<text> *Осмотреть подробнее* </text>
+		</answer>
+	</answers>
+</node>
+
+<node>
+	<npctext> Там два ящика. Кто их туда засунул! Видимо лифт был перегружен. </npctext>
+	<answers>
+		<answer tonode = "0">
+			<text> А теперь он сломан.... </text>
+			<dialend>true</dialend>
+		</answer>
+	</answers>
+</node>
+</dialogue>

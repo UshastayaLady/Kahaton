@@ -1,0 +1,26 @@
+<dialogue>
+<node>
+	<npctext> *Надпись в терминале медицинского отсека:* </npctext>
+	<answers>
+		<answer tonode = "1">
+			<text> "НЕВОЗМОЖНА РАБОТА БЕЗ ЛЕКАСТВ" </text>
+		</answer>
+	</answers>
+</node>
+
+<node>
+	<npctext> Инъекция создается из припасов, которые загружают в грузовой лифт </npctext>
+	<answers>
+		<answer tonode = "0">
+			<text> Надо проверить его </text>
+			<quests>
+				<quest>
+					<textQuest> Наладить работу медицинского отсека и создать сыворотку </textQuest>
+					<gameObjectSetActiv>true</gameObjectSetActiv>
+				</quest>
+			</quests>
+			<dialend>true</dialend>
+		</answer>
+	</answers>
+</node>
+</dialogue>

@@ -1,0 +1,25 @@
+<dialogue>
+	<node>
+		<npctext> Грузовой лифт можно отключить, пока он далеко не уехал, и вытащить один из ящиков </npctext>
+		<answers>
+			<answer tonode = "1">
+				<text> *Вытащить ящик* </text>							
+			</answer>
+		</answers>
+	</node>
+	
+	<node>
+		<npctext> Здесь лежит ящик! Для создания сыворотки нужен определённый. </npctext>
+		<answers>
+			<answer tonode = "0">
+				<text> Взять ближайший </text>
+				<quests>
+					<quest>
+						<gameObjectSetActiv>true</gameObjectSetActiv>
+					</quest>
+				</quests>				
+				<dialend>true</dialend>				
+			</answer>
+		</answers>
+	</node>
+</dialogue>

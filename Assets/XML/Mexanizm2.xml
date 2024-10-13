@@ -1,0 +1,44 @@
+<dialogue>
+	<node>
+		<npctext> </npctext>
+		<answers>
+			<answer tonode = "0">
+				<text> *Вставить сыворотку* </text>
+				<quests>
+					<quest>
+						<items>
+							<item>
+								<gameObjectTake>Nud</gameObjectTake>
+								<gameObjectTakeCount>1</gameObjectTakeCount>
+							</item>
+						</items>
+					</quest>
+				</quests>
+				<dialend>true</dialend>
+			</answer>
+		</answers>
+	</node>	
+	<node>
+		<npctext> *Надпись на панели медицинского отсека: "СЫВОРОТКА НЕ ПРОШЛА ИНКУБАЦИЮ" * </npctext>
+		<answers>
+			<answer tonode = "0">
+				<text> *Далее* </text>
+				<after>true</after>
+			</answer>
+		</answers>
+	</node>
+	<node>
+		<npctext> *Надпись на панели медицинского отсека: "СЫВОРОТКА ПРОШЛА ИНКУБАЦИЮ" * </npctext>
+		<answers>
+			<answer tonode = "0">
+				<text> *Далее* </text>
+				<quests>
+					<quest>
+						<gameObjectSetActiv>true</gameObjectSetActiv>
+					</quest>
+				</quests>
+				<dialend>true</dialend>
+			</answer>
+		</answers>
+	</node>
+</dialogue>

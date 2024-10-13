@@ -1,0 +1,11 @@
+<dialogue>
+	<node>
+		<npctext> О, моя капсула. Какой я всё-таки красавчик</npctext>
+		<answers>
+			<answer tonode = "0">
+				<text> *Перестать любоваться собой* </text>
+				<after>true</after>				
+			</answer>
+		</answers>
+	</node>
+</dialogue>

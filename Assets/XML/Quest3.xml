@@ -1,0 +1,9 @@
+<dialogue>
+	<node>
+		<quests>
+			<quest>
+				<textQuest> Решить проблему с питанием </textQuest>
+			</quest>
+		</quests>
+	</node>
+</dialogue>

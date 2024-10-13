@@ -1,0 +1,11 @@
+<dialogue>
+	<node>
+		<npctext> *На капсуле капитана какая-то надпись* </npctext>
+		<answers>
+			<answer tonode = "0">
+				<text> "1277" </text>				
+				<dialend>true</dialend>				
+			</answer>
+		</answers>
+	</node>
+</dialogue>

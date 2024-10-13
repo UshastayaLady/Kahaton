@@ -1,0 +1,25 @@
+<dialogue>
+	<node>
+		<npctext> *Информационная панель энерго-ячейки мигает* </npctext>
+		<answers>
+			<answer tonode = "1">
+				<text> *Рассмотреть получше* </text>							
+			</answer>
+		</answers>
+	</node>
+	
+	<node>
+		<npctext> "ПОВРЕЖДЁН НАРУЖНЫЙ НАВИГАЦИОННЫЙ МОДУЛЬ, ПОТРЕБЛЕНИЕ ЭНЕРГИИ НАРУШЕНО" </npctext>
+		<answers>
+			<answer tonode = "0">
+				<text> Наверное, из-за этого и возникли неполадки... </text>
+				<quests>
+					<quest>
+						<textQuest> Изменить координаты движения корабля </textQuest>
+					</quest>
+				</quests>
+				<dialend>true</dialend>
+			</answer>
+		</answers>
+	</node>
+</dialogue>

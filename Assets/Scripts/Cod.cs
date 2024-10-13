@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class PinCodeInput : MonoBehaviour
 {
+    [SerializeField] private GameObject open;
+    [SerializeField] private GameObject close;
+    [SerializeField] private GameObject close1;
     private string enteredPin = "";
     public string correctPinCode = "1234"; // Правильный PIN-код
     public Text displayText; // Текстовое поле для отображения введенного PIN-кода
@@ -42,12 +45,17 @@ public class PinCodeInput : MonoBehaviour
         if (enteredPin == correctPinCode)
         {
             Debug.Log("PIN-код правильный!");
-            // Здесь можно добавить дополнительную логику для успешного ввода
+            TaskBoardManager.instance.TaskEndAndDelete("Ввести пароль в терминал");
+            TaskBoardManager.instance.TaskEndAndDelete("Восстановить подачу сероводорода в капсулу");
+            open.SetActive(true);
+            close.SetActive(false);
+            if(close1!=null)
+                close1.SetActive(false);
+            GameObject.Destroy(gameObject);
         }
         else
         {
-            Debug.Log("Неверный PIN-код.");
-            // Здесь можно добавить дополнительную логику для неверного ввода
+            Debug.Log("Неверный PIN-код.");  
         }
 
         // Очищаем введенный PIN-код после проверки
