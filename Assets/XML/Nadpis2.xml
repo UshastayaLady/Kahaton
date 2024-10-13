@@ -1,0 +1,26 @@
+<dialogue>
+	<node>
+		<npctext> "РЕКОМЕНДОВАНО СКОРРЕКТИРОВАТЬ МАРШРУТ" </npctext>
+		<answers>
+			<answer tonode = "1">
+				<text> Это сигнал о приближении к полю астероидов! </text>
+			</answer>
+		</answers>
+	</node>
+
+	<node>
+		<npctext>  </npctext>
+		<answers> "ПОДТВЕРДИТЕ ИЗМЕНЕНИЕ МАРШРУТА"
+			<answer tonode = "0">
+				<text> *Подтвердить*  </text>
+				<quests>
+					<quest>
+						<questEndAndDelete>Изменить координаты движения корабля</questEndAndDelete>
+						<gameObjectSetActiv>true</gameObjectSetActiv>
+					</quest>
+				</quests>				
+				<dialend>true</dialend>
+		</answer>
+		</answers>
+	</node>
+</dialogue>

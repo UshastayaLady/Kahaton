@@ -36,7 +36,8 @@ public class DialogueTrigger : MonoBehaviour
                     {
                         if (GameObjectSetActiv[i].dialogueCount == currentTa)
                         {
-                            GameObjectSetActiv[i].GameObjectSetActiv.SetActive(!GameObjectSetActiv[i].GameObjectSetActiv.activeSelf);
+                            if (GameObjectSetActiv[i].GameObjectSetActiv != null)
+                                GameObjectSetActiv[i].GameObjectSetActiv.SetActive(!GameObjectSetActiv[i].GameObjectSetActiv.activeSelf);
                         }
                     }
 

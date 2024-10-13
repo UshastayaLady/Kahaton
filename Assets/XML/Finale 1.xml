@@ -1,0 +1,16 @@
+<dialogue>
+	<node>
+		<npctext> Сладких снов мне)  </npctext>
+		<answers>
+			<answer tonode = "0">
+				<text> *ом-ном-хррр*  </text>
+				<quests>
+					<quest>
+						<gameObjectSetActiv>true</gameObjectSetActiv>
+					</quest>
+				</quests>
+				<dialend>true</dialend>
+			</answer>
+		</answers>
+	</node>
+</dialogue>

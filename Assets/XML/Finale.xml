@@ -1,0 +1,16 @@
+<dialogue>
+	<node>
+		<npctext> Кажется теперь я могу продолжить свой сон...  </npctext>
+		<answers>
+			<answer tonode = "0">
+				<text> *Далее*  </text>
+				<quests>
+					<quest>
+						<gameObjectSetActiv>true</gameObjectSetActiv>
+					</quest>
+				</quests>
+				<dialend>true</dialend>
+			</answer>
+		</answers>
+	</node>
+</dialogue>

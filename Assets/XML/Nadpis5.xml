@@ -1,0 +1,36 @@
+<dialogue>
+<node>
+	<npctext> *Надпись в терминале:* </npctext>
+	<answers>
+		<answer tonode = "1">
+			<text> *Прочитать* </text>
+		</answer>
+	</answers>
+</node>
+
+<node>
+	<npctext> "КРИО СОН ПРЕРВАН ИЗ-ЗА ПЕРЕПАДА УРОВНЯ ДАВЛЕНИЯ КИСЛОРОДА, ВЫЗВАННЫЙ СКАЧКОМ НАПРЯЖЕНИЯ"  </npctext>
+	<answers>
+		<answer tonode = "2">
+			<text> "ТРЕБУЕТСЯ УКОЛ КРИОНИЧЕСКОЙ СЫВОРОТКИ" </text>
+			<quests>
+				<quest>
+					<textQuest> Сделать себе инъекцию </textQuest>
+					<gameObjectSetActiv>true</gameObjectSetActiv>
+				</quest>
+			</quests>
+		</answer>
+	</answers>
+
+</node>
+	
+<node>
+	<npctext> Точно! После выхода из сна мне снова нужен укол </npctext>
+	<answers>
+		<answer tonode = "0">
+			<text> Он должен быть в медицинском отсеке </text>
+			<dialend>true</dialend>
+		</answer>
+	</answers>
+</node>
+</dialogue>

@@ -1,0 +1,18 @@
+<dialogue>
+	<node>
+		<npctext> "ТРЕБУЕТСЯ ВВОД ПАРОЛЯ ПОСЛЕ ПЕРЕЗАГРУЗКИ ТЕРМИНАЛА" </npctext>
+		<answers>
+			<answer tonode = "0">
+				<text> *Далее* </text>
+				<quests>
+					<quest>
+						<questEndAndDelete> Починить терминал </questEndAndDelete>
+						<textQuest> Ввести пароль в терминал </textQuest>
+						<gameObjectSetActiv>true</gameObjectSetActiv>
+					</quest>
+				</quests>
+				<dialend>true</dialend>
+			</answer>
+		</answers>
+	</node>
+</dialogue>

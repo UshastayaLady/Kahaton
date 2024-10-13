@@ -63,12 +63,17 @@ public class FirstPersonController : MonoBehaviour
 
         // Set internal variables
         playerCamera.fieldOfView = fov;
-        jointOriginalPos = joint.localPosition;                
+        jointOriginalPos = joint.localPosition;
+        
     }     
 
     private void Update()
     {
-        if (isFreezed) return;
+        if (isFreezed)
+        { 
+            return;
+        }
+        else rb.constraints = RigidbodyConstraints.None;        
         GameObject man;
         man = GameObject.FindGameObjectWithTag("Player");
         #region Camera
@@ -121,21 +126,18 @@ public class FirstPersonController : MonoBehaviour
             {
                 isWalking = false;
             }
+            targetVelocity = transform.TransformDirection(targetVelocity) * walkSpeed;
 
-            
-            
+            // Apply a force that attempts to reach our target velocity
+            Vector3 velocity = rb.velocity;
+            Vector3 velocityChange = (targetVelocity - velocity);
+            velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
+            velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
+            velocityChange.y = 0;
 
-                targetVelocity = transform.TransformDirection(targetVelocity) * walkSpeed;
-
-                // Apply a force that attempts to reach our target velocity
-                Vector3 velocity = rb.velocity;
-                Vector3 velocityChange = (targetVelocity - velocity);
-                velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
-                velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
-                velocityChange.y = 0;
-
-                rb.AddForce(velocityChange, ForceMode.VelocityChange);
-            
+            rb.AddForce(velocityChange, ForceMode.VelocityChange);
+            //Vector3 newPosition = transform.position + targetVelocity * Time.deltaTime;
+            //rb.MovePosition(newPosition);
         }
 
         #endregion
@@ -161,6 +163,16 @@ public class FirstPersonController : MonoBehaviour
     public void setFreeze(bool state)
     {
         isFreezed = state;
+        if (state)
+        {
+            // Замораживаем все движения, включая поворот
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+        }
+        else
+        {
+            // Размораживаем ограничения
+            rb.constraints = RigidbodyConstraints.None;
+        }
     }
 }
 

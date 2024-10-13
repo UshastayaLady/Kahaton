@@ -1,0 +1,26 @@
+<dialogue>
+<node>
+	<npctext> *Шланг подачи сероводорода к вашей капсуле отсоединился* </npctext>
+	<answers>
+		<answer tonode = "1">
+			<text> *Далее* </text>
+			<quests>
+				<quest>
+					<textQuest> Восстановить подачу сероводорода в капсулу </textQuest>
+					<gameObjectSetActiv>true</gameObjectSetActiv>
+				</quest>
+			</quests>
+		</answer>
+	</answers>
+</node>
+
+<node>
+	<npctext> Похоже именно из-за этого я и проснулся.</npctext>
+	<answers>
+		<answer tonode = "0">
+			<text> Надо перезапустить криокапсулу через терминал. </text>
+			<dialend>true</dialend>
+		</answer>
+	</answers>
+</node>
+</dialogue>

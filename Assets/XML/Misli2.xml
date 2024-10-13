@@ -1,0 +1,27 @@
+<dialogue>
+<node>
+	<npctext> *Терминал не работает* </npctext>
+	<answers>
+		<answer tonode = "1">
+			<text> *Далее* </text>
+			<quests>
+				<quest>
+					<textQuest> Починить терминал </textQuest>
+					<gameObjectSetActiv>true</gameObjectSetActiv>
+				</quest>
+			</quests>
+		</answer>
+	</answers>	
+</node>
+
+	
+<node>
+	<npctext> Судя по всему нет питания</npctext>
+	<answers>
+		<answer tonode = "0">
+			<text> Надо проверить энерго-ячейки в пункте управления </text>
+			<dialend>true</dialend>
+		</answer>
+	</answers>
+</node>
+</dialogue>

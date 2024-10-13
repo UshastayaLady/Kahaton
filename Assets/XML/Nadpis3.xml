@@ -1,0 +1,11 @@
+<dialogue>
+	<node>
+		<npctext> "ТРЕБУЕТСЯ ДЕЙСТВИЕ В ТЕРМИНАЛЕ" </npctext>
+		<answers>
+			<answer tonode = "0">
+				<text> *Далее* </text>				
+				<dialend>true</dialend>				
+			</answer>
+		</answers>
+	</node>
+</dialogue>

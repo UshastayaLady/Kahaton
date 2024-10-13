@@ -47,5 +47,10 @@ public class PlayerTakeItem : MonoBehaviour
                 InventoryManager.instance.AddItem(nearestObject, nearestObject.name);
             }
         }
-    }    
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(playerCamera.transform.position, interactRange);
+    }
 }
