@@ -1,10 +1,10 @@
 using UnityEngine;
 
 public class TriggerAddQuest : Trigger
-{
-    [SerializeField] private GameObject Open;
+{    
+    [SerializeField] private string textNewQuest;
     public override void Make()
     {
-        Open.SetActive(true);
+        TaskBoardManager.instance.AddTask(textNewQuest);
     }
 }

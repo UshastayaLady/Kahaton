@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue()
     {
         dialogueAnim.SetBool("dialogueOpen", true);
+        CursorManager.instance.cursorWork = true;
         dialogueClosed = false;
         FPS.setFreeze(true);
     }
@@ -26,6 +27,7 @@ public class DialogueManager : MonoBehaviour
     {
         InstantiateDialogue.instance.CloseDialogue();
         dialogueAnim.SetBool("dialogueOpen", false);
+        CursorManager.instance.cursorWork = false;
         dialogueClosed = true;
         FPS.setFreeze(false);
     }
